@@ -37,8 +37,19 @@ namespace FormsAuthenticationModule
 			if (!logIn)
 			{
 				Console.WriteLine("user {0} is unknown.", UserName);
-			}
-			return logIn;
+
+                //<Petru>
+                if (this.NextModule != null)
+                {
+                    logIn = this.NextModule.LogIn(UserName, Password);
+                }
+                else
+                {
+                    Console.WriteLine("End of chain.. sorry bro");
+                }
+                //</Petru>
+            }
+            return logIn;
 		}
 
 		public override bool LogOut(string UserName)
