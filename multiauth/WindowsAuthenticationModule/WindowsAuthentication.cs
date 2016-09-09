@@ -1,4 +1,6 @@
-﻿namespace WindowsAuthenticationModule
+﻿using System.Runtime.InteropServices;
+
+namespace WindowsAuthenticationModule
 {
 	using System;
 
@@ -6,17 +8,22 @@
 
 	public class WindowsAuthentication : ICanAuthenticateUsers
 	{
-		public bool LogIn(string UserName, string Password)
+		public void LogIn(string UserName, string Password)
 		{
-			Console.WriteLine( "{0}: ", this.GetType().Name );
+			Console.WriteLine( "{0} is trying to log the user ", this.GetType().Name );
 			var logIn = UserName == "gigel" && Password == "g!g3l3";
 
-			if (!logIn)
-			{
-				Console.WriteLine("user {0} is unknown.", UserName );
-			}
+		    if (!logIn && this.NextModule != null)
+		    {
+		        //Console.WriteLine("user {0} is unknown.", UserName );
+		        this.NextModule.LogIn(UserName, Password);
+		    }
+		    else
+		    {
+		        Console.WriteLine("user {0} has logged in successfully with {1} ",UserName,this.GetType().Name);
+		    }
 
-			return logIn;
+			
 		}
 
 		public bool LogOut(string UserName)

@@ -66,17 +66,17 @@ namespace multiauth
 			}
 		}
 		
-		public bool TryAll(string userName, string password)
-		{
-			bool login = false;
-			foreach (var module in this.authenticationModules)
-			{
-				login = module.LogIn(userName, password);
-				if (login) return login;
+		//public bool TryAll(string userName, string password)
+		//{
+		//	bool login = false;
+		//	foreach (var module in this.authenticationModules)
+		//	{
+		//		login = module.LogIn(userName, password);
+		//		if (login) return login;
 				
-			}
+		//	}
 
-			return login;
-		}
+		//	return login;
+		//}
 	}
 }

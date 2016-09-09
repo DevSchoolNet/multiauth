@@ -1,4 +1,8 @@
 ﻿using System;
+using WindowsAuthenticationModule;
+using AuthenticationModule;
+using FormsAuthenticationModule;
+using GoogleAuthenticationModule;
 using log4net.Config;
 using log4net;
 
@@ -11,9 +15,13 @@ namespace multiauth
 		{
 			XmlConfigurator.Configure();
 
-			var reply = 0;
-			var authHandlers = new AuthenticationHandler();
+			//var reply = 0;
+			//var authHandlers = new AuthenticationHandler();
 			//var authModule = authHandlers.StartAuthenticationModule();
+			ICanAuthenticateUsers a=new WindowsAuthentication();
+			ICanAuthenticateUsers b=new FormsAuthentication();
+			ICanAuthenticateUsers c=new GoogleAuthentication();
+			
 
 			if (args.Length != 2)
 			{
@@ -27,15 +35,21 @@ namespace multiauth
 			var userName = args[0];
 			var password = args[1];
 
-			bool login;
+			a.NextModule = b;
+			b.NextModule = c;
 
-			login = authHandlers.TryAll(userName, password);
-			
+			a.LogIn(userName,password);
 
-			if (login)
-			{
-				Console.WriteLine( "user {0} has logged in successfully.", userName );
-			}
+
+			//bool login;
+
+			//login = authHandlers.TryAll(userName, password);
+
+
+			//if (login)
+			//{
+			//	Console.WriteLine( "user {0} has logged in successfully.", userName );
+			//}
 
 			Console.ReadLine();
 		}
