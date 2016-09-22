@@ -66,11 +66,37 @@ namespace multiauth
 			}
 		}
 		
+        //<Petru>
+        private ICanAuthenticateUsers modulesListGetElement(Type t)
+        {
+            foreach (var module in this.authenticationModules)
+            {
+                if (module.GetType() == t)
+                {
+                    return module;
+                }
+            }
+
+            return null;
+        }
+
+        private void setNextModules(Type t1, Type t2, Type t3)
+        {
+            modulesListGetElement(t1).NextModule = modulesListGetElement(t2);
+            modulesListGetElement(t2).NextModule = modulesListGetElement(t3);
+        }
+        //</Petru>
+
 		public bool TryAll(string userName, string password)
 		{
+
+
 			bool login = false;
 			foreach (var module in this.authenticationModules)
 			{
+                setNextModules(typeof(WindowsAuthenticationModule.WindowsAuthentication),
+                    typeof(FormsAuthenticationModule.FormsAuthentication), typeof(GoogleAuthenticationModule.GoogleAuthentication));
+
 				login = module.LogIn(userName, password);
 				if (login) return login;
 				
