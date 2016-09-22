@@ -1,0 +1,9 @@
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\bin\Debug\WindowsAuthenticationModule.dll
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\bin\Debug\WindowsAuthenticationModule.pdb
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\bin\Debug\AuthenticationModule.dll
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\bin\Debug\log4net.dll
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\bin\Debug\AuthenticationModule.pdb
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\bin\Debug\log4net.xml
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\obj\Debug\WindowsAuthenticationModule.csprojResolveAssemblyReference.cache
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\obj\Debug\WindowsAuthenticationModule.dll
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\WindowsAuthenticationModule\obj\Debug\WindowsAuthenticationModule.pdb

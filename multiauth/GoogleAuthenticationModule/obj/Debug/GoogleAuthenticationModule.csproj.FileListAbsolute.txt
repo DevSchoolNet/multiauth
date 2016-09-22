@@ -1,0 +1,10 @@
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\bin\Debug\GoogleAuthenticationModule.dll.config
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\bin\Debug\GoogleAuthenticationModule.dll
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\bin\Debug\GoogleAuthenticationModule.pdb
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\bin\Debug\AuthenticationModule.dll
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\bin\Debug\log4net.dll
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\bin\Debug\AuthenticationModule.pdb
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\bin\Debug\log4net.xml
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\obj\Debug\GoogleAuthenticationModule.csprojResolveAssemblyReference.cache
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\obj\Debug\GoogleAuthenticationModule.dll
+C:\Users\jupyt\Source\Repos\multiauthTheodor\multiauth\GoogleAuthenticationModule\obj\Debug\GoogleAuthenticationModule.pdb

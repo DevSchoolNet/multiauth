@@ -19,26 +19,32 @@ namespace FormsAuthenticationModule
 													.ConnectionString;
 
 		}
-		public override bool LogIn(string UserName, string Password)
+		public override void LogIn(string UserName, string Password)
 		{
-			Console.WriteLine("{0}: ", this.GetType().Name);
+			Console.WriteLine("{0} is trying to log the user ", this.GetType().Name);
 
 			bool logIn;
 
-			using (var conn = new SqlConnection(connectionString) )
-			{
-				var user = conn.Query<User>("select UserName=@UserName, Password=@Password",
-								new {UserName = UserName, Password = Password})
-								.SingleOrDefault();
+			//using (var conn = new SqlConnection(connectionString) )
+			//{
+			//	var user = conn.Query<User>("select UserName=@UserName, Password=@Password",
+			//					new {UserName = UserName, Password = Password})
+			//					.SingleOrDefault();
 
-				logIn = user != null;
+			//	logIn = user != null;
+			//}
+
+			logIn = UserName == "gigi" && Password == "gigel";
+			if (!logIn&&this.NextModule!=null)
+			{
+				//Console.WriteLine("user {0} is unknown.", UserName);
+				this.NextModule.LogIn(UserName,Password);
+			}
+			else
+			{
+				Console.WriteLine("user {0} has logged in successfully with {1} ", UserName, this.GetType().Name);
 			}
 
-			if (!logIn)
-			{
-				Console.WriteLine("user {0} is unknown.", UserName);
-			}
-			return logIn;
 		}
 
 		public override bool LogOut(string UserName)
